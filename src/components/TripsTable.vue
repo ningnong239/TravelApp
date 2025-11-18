@@ -101,7 +101,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
   trips: any[];
   formatDate: (date: string | Date) => string;
 }>();

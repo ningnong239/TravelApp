@@ -40,10 +40,10 @@
         <button
           type="submit"
           class="w-full py-2 rounded-lg transition flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
-          :disabled="auth.isLoading"
+          :disabled="auth.state.isLoading"
         >
           <svg
-            v-if="auth.isLoading"
+            v-if="auth.state.isLoading"
             class="animate-spin h-5 w-5 mr-2 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -63,7 +63,7 @@
               d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
             ></path>
           </svg>
-          <span>{{ auth.isLoading ? "Logging in..." : "Login" }}</span>
+          <span>{{ auth.state.isLoading ? "Logging in..." : "Login" }}</span>
         </button>
       </form>
 
@@ -76,8 +76,8 @@
       </p>
 
       <!-- Error Message -->
-      <p v-if="auth.error" class="text-red-500 mt-2 text-center">
-        {{ auth.error }}
+      <p v-if="auth.state.error" class="text-red-500 mt-2 text-center">
+        {{ auth.state.error }}
       </p>
     </div>
   </div>

@@ -34,11 +34,7 @@ export function useEditTrip() {
         const data = new FormData();
         data.append("file", file);
 
-        const res = await api.post("/files/upload", data, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await api.post("/files/upload", data);
         uploadedUrls.push(res.data.url);
         progress.value = ((i + 1) / formData.selectedFiles.length) * 50;
         loadingEditMessage.value = `Uploading ${i + 1}/${
@@ -61,11 +57,7 @@ export function useEditTrip() {
       loadingEditMessage.value = "Updating trip...";
       progress.value = 75;
 
-      const res = await api.put(`/trips/${currentTrip.value.id}`, tripData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await api.put(`/trips/${currentTrip.value.id}`, tripData);
 
       progress.value = 100;
       loadingEditMessage.value = "Trip updated successfully!";

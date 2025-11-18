@@ -26,11 +26,7 @@ export function useCreateTrip() {
         const data = new FormData();
         data.append("file", file);
 
-        const res = await api.post("/files/upload", data, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await api.post("/files/upload", data);
         uploadedUrls.push(res.data.url);
         progress.value = ((i + 1) / form.selectedFiles.length) * 50;
         loadingMessage.value = `Uploading ${i + 1}/${
@@ -50,11 +46,7 @@ export function useCreateTrip() {
         longitude: form.longitude,
       };
 
-      await api.post("/trips", tripData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await api.post("/trips", tripData);
 
       progress.value = 100;
       loadingMessage.value = "Trip created successfully!";

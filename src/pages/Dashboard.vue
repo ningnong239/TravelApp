@@ -86,11 +86,7 @@ const fetchMyTrips = async () => {
   error.value = "";
 
   try {
-    const response = await api.get("/trips/mine", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await api.get("/trips/mine");
     trips.value = response.data;
   } catch (err: any) {
     if (err.response?.status === 401) {
