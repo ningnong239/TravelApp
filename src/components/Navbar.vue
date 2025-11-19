@@ -1,12 +1,12 @@
 <template>
   <nav
-    class="bg-white shadow-md px-8 py-4 flex justify-between items-center sticky top-0 z-50 rounded-lg"
+    class="bg-green-100 shadow-md px-8 py-4 flex justify-between items-center sticky top-0 z-50 rounded-lg"
   >
     <router-link
       to="/"
       class="text-2xl font-extrabold text-blue-600 hover:text-blue-700 transition-colors"
     >
-      Travel Explorer
+      Travel app
     </router-link>
 
     <div class="flex items-center space-x-6">

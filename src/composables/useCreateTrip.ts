@@ -26,7 +26,7 @@ export function useCreateTrip() {
         const data = new FormData();
         data.append("file", file);
 
-        const res = await api.post("/files/upload", data);
+        const res = await api.post("/api/files/upload", data);
         uploadedUrls.push(res.data.url);
         progress.value = ((i + 1) / form.selectedFiles.length) * 50;
         loadingMessage.value = `Uploading ${i + 1}/${
@@ -46,7 +46,7 @@ export function useCreateTrip() {
         longitude: form.longitude,
       };
 
-      await api.post("/trips", tripData);
+      await api.post("/api/trips", tripData);
 
       progress.value = 100;
       loadingMessage.value = "Trip created successfully!";

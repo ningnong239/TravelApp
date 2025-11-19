@@ -24,7 +24,7 @@ export function useAuth() {
     state.isLoading = true;
     state.error = "";
     try {
-      const response = await api.post("/auth/login", { email, password });
+      const response = await api.post("/api/auth/login", { email, password });
       const { token, user: userData } = response.data;
 
       localStorage.setItem("token", token);

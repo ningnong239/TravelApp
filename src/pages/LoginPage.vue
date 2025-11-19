@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex items-start justify-center pt-24">
+  <div class="min-h-screen flex items-start justify-center pt-24 bg-white">
     <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-      <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+      <h1 class="text-2xl font-bold mb-6 text-center text-black">Login</h1>
 
       <form @submit.prevent="handleLogin" class="space-y-4">
         <!-- Email -->
@@ -39,12 +39,12 @@
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full py-2 rounded-lg transition flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-blue-200 hover:bg-blue-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
           :disabled="auth.state.isLoading"
         >
           <svg
             v-if="auth.state.isLoading"
-            class="animate-spin h-5 w-5 mr-2 text-white"
+            class="animate-spin h-5 w-5 mr-2 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

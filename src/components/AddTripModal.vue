@@ -10,7 +10,7 @@
       >
         ✕
       </button>
-      <h2 class="text-2xl font-bold mb-4">Add New Trip</h2>
+      <h2 class="text-2xl font-bold mb-4 text-black">Add New Trip</h2>
 
       <form @submit.prevent="handleSubmit">
         <!-- Title -->
@@ -73,7 +73,7 @@
         <button
           type="submit"
           :disabled="loading"
-          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+          class="bg-blue-200 text-black px-4 py-2 rounded-lg hover:bg-blue-300"
         >
           {{
             loading

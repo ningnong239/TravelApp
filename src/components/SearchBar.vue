@@ -4,12 +4,12 @@
       v-model="keyword"
       @keyup.enter="search"
       type="text"
-      placeholder="Ready to explore? 🌍."
+      placeholder="ค้นหาทริป"
       class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
     <button
       @click="search"
-      class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+      class="px-4 py-2 bg-blue-200 text-black rounded-lg hover:bg-blue-300"
     >
       Search
     </button>
@@ -29,7 +29,7 @@ const emit = defineEmits<{
 
 const search = async () => {
   try {
-    const response = await api.get<Trip[]>("/trips", {
+    const response = await api.get<Trip[]>("/api/trips", {
       params: { query: keyword.value || undefined },
     });
     emit("updateResults", response.data);

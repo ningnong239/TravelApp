@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="p-8 bg-white min-h-screen">
     <!-- Header -->
 
     <TripsTableHeader
@@ -86,7 +86,7 @@ const fetchMyTrips = async () => {
   error.value = "";
 
   try {
-    const response = await api.get("/trips/mine");
+    const response = await api.get("/api/trips/mine");
     trips.value = response.data;
   } catch (err: any) {
     if (err.response?.status === 401) {

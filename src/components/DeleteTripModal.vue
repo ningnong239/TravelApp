@@ -16,7 +16,7 @@
         <button
           @click="$emit('confirm')"
           :disabled="loading"
-          class="px-4 py-2 rounded-lg bg-rose-500 text-white hover:bg-rose-700"
+          class="px-4 py-2 rounded-lg bg-rose-200 text-black hover:bg-rose-300"
         >
           {{ loading ? "Deleting..." : "Delete" }}
         </button>

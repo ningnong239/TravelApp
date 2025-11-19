@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 px-4 max-w-4xl mx-auto">
+  <div class="pt-20 px-4 max-w-4xl mx-auto bg-white min-h-screen">
     <div v-if="trip" class="bg-white rounded-lg shadow-lg overflow-hidden">
       <!-- Cover Image -->
       <div class="w-full h-96 overflow-hidden">
@@ -11,7 +11,7 @@
       </div>
 
       <div class="p-6 flex flex-col">
-        <h1 class="text-3xl font-bold mb-2">{{ trip.title }}</h1>
+        <h1 class="text-3xl font-bold mb-2 text-black">{{ trip.title }}</h1>
 
         <!-- Description ชิดซ้าย -->
         <p class="text-gray-700 mb-4 leading-relaxed text-left">
@@ -46,7 +46,7 @@
         <!-- Map Section -->
         <!-- Map Section -->
         <div class="mt-6 border border-gray-200 rounded-lg p-4">
-          <h2 class="text-xl font-semibold mb-2 text-left">แผนที่</h2>
+          <h2 class="text-xl font-semibold mb-2 text-left text-black">แผนที่</h2>
 
           <div v-if="trip.latitude && trip.longitude">
             <iframe
@@ -99,7 +99,7 @@ const trip = ref<Trip | null>(null);
 
 const fetchTripById = async (id: string | string[]) => {
   try {
-    const response = await api.get<Trip>(`/trips/${id}`);
+    const response = await api.get<Trip>(`/api/trips/${id}`);
     trip.value = response.data;
   } catch (error) {
     console.error("Failed to fetch trip detail:", error);

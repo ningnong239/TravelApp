@@ -1,29 +1,40 @@
 <template>
   <section class="py-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <TripCard v-for="trip in displayedTrips" :key="trip.id" :trip="trip" />
+    <div v-if="displayedTrips.length === 0" class="text-center text-gray-500 mt-12">
+      <p>ยังไม่มีทริปที่เพิ่มเข้ามา</p>
     </div>
+    
+    <div v-else>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <TripCard v-for="trip in displayedTrips" :key="trip.id" :trip="trip" />
+      </div>
 
-    <div v-if="showLoadMore" class="text-center mt-6">
-      <button
-        @click="loadMore"
-        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-      >
-        Load More
-      </button>
+      <div v-if="showLoadMore" class="text-center mt-6">
+        <button
+          @click="loadMore"
+          class="bg-blue-200 text-black px-4 py-2 rounded-lg hover:bg-blue-300"
+        >
+          Load More
+        </button>
+      </div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, watch } from "vue";
 import TripCard from "./TripCard.vue";
-import { api } from "../api.ts";
 import type { Trip } from "../types/trip";
 
-const trips = ref<Trip[]>([]);
+const props = defineProps<{
+  trips?: Trip[];
+}>();
+
 const itemsPerPage = 6; // จำนวนการ์ดต่อ load
 const currentPage = ref(1);
+
+// ใช้ trips จาก props หรือใช้ array ว่าง
+const trips = computed(() => props.trips || []);
 
 // คำนวณ trips ที่จะแสดง
 const displayedTrips = computed(() => {
@@ -40,21 +51,8 @@ const loadMore = () => {
   currentPage.value++;
 };
 
-const fetchTrips = async () => {
-  try {
-    const response = await api.get<Trip[]>("/trips");
-    trips.value = response.data.sort(
-      (
-        a: { createdAt: string | number | Date },
-        b: { createdAt: string | number | Date }
-      ) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    );
-  } catch (error) {
-    console.error("Failed to fetch trips:", error);
-  }
-};
-
-onMounted(() => {
-  fetchTrips();
+// Reset currentPage เมื่อ trips เปลี่ยน
+watch(() => props.trips, () => {
+  currentPage.value = 1;
 });
 </script>

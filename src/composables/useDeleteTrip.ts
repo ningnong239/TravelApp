@@ -15,7 +15,7 @@ export function useDeleteTrip() {
 
     loadingDelete.value = true;
     try {
-      await api.delete(`trips/${tripToDelete.value}`, {
+      await api.delete(`/api/trips/${tripToDelete.value}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

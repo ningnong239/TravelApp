@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex items-start justify-center pt-24">
+  <div class="min-h-screen flex items-start justify-center pt-24 bg-white">
     <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-      <h1 class="text-2xl font-bold mb-6 text-center">Register</h1>
+      <h1 class="text-2xl font-bold mb-6 text-center text-black">Register</h1>
 
       <RegisterForm
         :form="form"
@@ -95,7 +95,7 @@ const registerUser = async () => {
       password: form.value.password,
     };
 
-    await api.post("/auth/register", payload);
+    await api.post("/api/auth/register", payload);
     successMessage.value = "Account created successfully. Please log in.";
 
     // Auto redirect to login after 2 seconds

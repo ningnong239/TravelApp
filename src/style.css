@@ -28,6 +28,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 button {
@@ -45,6 +46,8 @@ button {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
 @media (prefers-color-scheme: light) {

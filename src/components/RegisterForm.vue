@@ -6,11 +6,11 @@
         v-model="form.displayName"
         type="text"
         placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
       <label
-        class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
+        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
       >
         Display Name
       </label>
@@ -22,11 +22,11 @@
         v-model="form.email"
         type="email"
         placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
       <label
-        class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
+        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
       >
         Email
       </label>
@@ -41,11 +41,11 @@
         v-model="form.password"
         type="password"
         placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
       <label
-        class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
+        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
       >
         Password
       </label>
@@ -60,11 +60,11 @@
         v-model="form.confirmPassword"
         type="password"
         placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
       <label
-        class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
+        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
       >
         Confirm Password
       </label>
@@ -75,12 +75,12 @@
 
     <!-- Submit Button -->
     <button
-      class="w-full py-2 rounded-lg transition flex items-center justify-center text-white bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-green-200 hover:bg-green-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
       :disabled="isLoading"
     >
       <svg
         v-if="isLoading"
-        class="animate-spin h-5 w-5 mr-2 text-white"
+        class="animate-spin h-5 w-5 mr-2 text-black"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
