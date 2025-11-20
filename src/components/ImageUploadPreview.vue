@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, defineEmits } from "vue";
+import { ref, watch } from "vue";
 
 interface FileWithPreview extends File {
   preview: string;

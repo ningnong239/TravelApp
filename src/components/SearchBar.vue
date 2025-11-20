@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineEmits } from "vue";
+import { ref } from "vue";
 import { api } from "../api.ts";
 import type { Trip } from "../types/trip.ts";
 

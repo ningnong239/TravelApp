@@ -15,49 +15,49 @@
       <form @submit.prevent="handleSubmit">
         <!-- Title -->
         <div class="mb-4">
-          <label class="block mb-1 text-start">Title *</label>
+          <label class="block mb-1 text-start text-black">Title *</label>
           <input
             v-model="form.title"
             type="text"
             required
-            class="w-full border rounded p-2"
+            class="w-full border rounded p-2 bg-gray-100 text-black"
           />
         </div>
 
         <!-- Description -->
         <div class="mb-4">
-          <label class="block mb-1 text-start">Description *</label>
+          <label class="block mb-1 text-start text-black">Description *</label>
           <textarea
             v-model="form.description"
-            class="w-full border rounded p-2"
+            class="w-full border rounded p-2 bg-gray-100 text-black"
             required
           ></textarea>
         </div>
 
         <!-- Tags -->
         <div class="mb-4">
-          <label class="block mb-1 text-start">Tags *</label>
+          <label class="block mb-1 text-start text-black">Tags *</label>
           <TagInput v-model:tags="form.tags" />
         </div>
 
         <!-- Latitude / Longitude -->
         <div class="mb-4 flex gap-4">
           <div class="flex-1">
-            <label class="block mb-1 text-start">Latitude *</label>
+            <label class="block mb-1 text-start text-black">Latitude *</label>
             <input
               type="text"
               v-model="form.latitude"
-              class="w-full border rounded p-2"
+              class="w-full border rounded p-2 bg-gray-100 text-black"
               placeholder="e.g. 12.3456"
               required
             />
           </div>
           <div class="flex-1">
-            <label class="block mb-1 text-start">Longitude *</label>
+            <label class="block mb-1 text-start text-black">Longitude *</label>
             <input
               type="text"
               v-model="form.longitude"
-              class="w-full border rounded p-2"
+              class="w-full border rounded p-2 bg-gray-100 text-black"
               placeholder="e.g. 102.1234"
             />
           </div>

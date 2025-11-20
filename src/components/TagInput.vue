@@ -6,7 +6,7 @@
         type="text"
         v-model="newTag"
         placeholder="Add a tag"
-        class="border rounded px-3 py-1 flex-1"
+        class="w-full border rounded p-2 bg-gray-100 text-black"
         :class="{ 'border-red-500': error }"
         required
       />
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineEmits, defineProps } from "vue";
+import { ref } from "vue";
 
 const props = defineProps<{ tags: string[] }>();
 const emit = defineEmits(["update:tags"]);
