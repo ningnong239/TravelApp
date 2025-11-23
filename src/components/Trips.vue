@@ -5,14 +5,14 @@
     </div>
     
     <div v-else>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="flex flex-col gap-6">
         <TripCard v-for="trip in displayedTrips" :key="trip.id" :trip="trip" />
       </div>
 
       <div v-if="showLoadMore" class="text-center mt-6">
         <button
           @click="loadMore"
-          class="bg-blue-200 text-black px-4 py-2 rounded-lg hover:bg-blue-300"
+          class="bg-green-100 text-black px-4 py-2 rounded-lg hover:bg-green-100"
         >
           Load More
         </button>

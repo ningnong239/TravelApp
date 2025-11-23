@@ -5,11 +5,11 @@
       @keyup.enter="search"
       type="text"
       placeholder="ค้นหาทริป"
-      class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      class="flex-grow px-4 py-2 bg-gray-100 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
     />
     <button
       @click="search"
-      class="px-4 py-2 bg-blue-200 text-black rounded-lg hover:bg-blue-300"
+      class="px-4 py-2 bg-green-100 text-black rounded-lg hover:bg-green-100"
     >
       Search
     </button>

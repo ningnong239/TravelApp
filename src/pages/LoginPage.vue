@@ -6,40 +6,37 @@
       <form @submit.prevent="handleLogin" class="space-y-4">
         <!-- Email -->
         <div class="relative z-0 w-full mb-4">
+          <label class="block text-black text-sm mb-1 text-left">
+            Email
+          </label>
           <input
             v-model="email"
             type="email"
-            placeholder=" "
-            class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             required
           />
-          <label
-            class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-          >
-            Email
-          </label>
+          <p v-if="auth.state.error" class="text-black text-xs mt-1">
+            {{ auth.state.error }}
+          </p>
         </div>
 
         <!-- Password -->
         <div class="relative z-0 w-full mb-4">
+          <label class="block text-black text-sm mb-1 text-left">
+            Password
+          </label>
           <input
             v-model="password"
             type="password"
-            placeholder=" "
-            class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             required
           />
-          <label
-            class="absolute text-gray-500 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-          >
-            Password
-          </label>
         </div>
 
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-blue-200 hover:bg-blue-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-green-100 hover:bg-blue-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
           :disabled="auth.state.isLoading"
         >
           <svg
