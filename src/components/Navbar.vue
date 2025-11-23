@@ -4,8 +4,13 @@
   >
     <router-link
       to="/"
-      class="text-2xl font-extrabold text-blue-600 hover:text-blue-700 transition-colors"
+      class="flex items-center gap-3 text-2xl font-extrabold text-black hover:text-black transition-colors"
     >
+      <img
+        src="/Travelapp.png"
+        alt="Travelapp Logo"
+        class="h-10 w-10 rounded-full object-cover"
+      />
       Travel app
     </router-link>
 

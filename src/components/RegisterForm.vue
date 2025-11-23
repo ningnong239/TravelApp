@@ -1,73 +1,61 @@
 <template>
   <form @submit.prevent="$emit('submit')" class="space-y-4">
     <!-- Display Name -->
-    <div class="relative z-0 w-full mb-4">
+    <div class="relative z-0 w-full mb-4 text-left">
+      <label class="block text-black text-sm mb-1">
+        Display Name
+      </label>
       <input
         v-model="form.displayName"
         type="text"
-        placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
-      <label
-        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-      >
-        Display Name
-      </label>
     </div>
 
     <!-- Email -->
-    <div class="relative z-0 w-full mb-4">
+    <div class="relative z-0 w-full mb-4 text-left">
+      <label class="block text-black text-sm mb-1 text-left">
+        Email
+      </label>
       <input
         v-model="form.email"
         type="email"
-        placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
-      <label
-        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-      >
-        Email
-      </label>
-      <p v-if="errors.email" class="text-red-500 text-xs mt-1">
+      <p v-if="errors.email" class="text-black text-xs mt-1">
         {{ errors.email }}
       </p>
     </div>
 
     <!-- Password -->
-    <div class="relative z-0 w-full mb-4">
+    <div class="relative z-0 w-full mb-4 text-left">
+      <label class="block text-black text-sm mb-1">
+        Password
+      </label>
       <input
         v-model="form.password"
         type="password"
-        placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
-      <label
-        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-      >
-        Password
-      </label>
       <p v-if="errors.password" class="text-red-500 text-xs mt-1">
         {{ errors.password }}
       </p>
     </div>
 
     <!-- Confirm Password -->
-    <div class="relative z-0 w-full mb-4">
+    <div class="relative z-0 w-full mb-4 text-left">
+      <label class="block text-black text-sm mb-1">
+        Confirm Password
+      </label>
       <input
         v-model="form.confirmPassword"
         type="password"
-        placeholder=" "
-        class="peer block w-full px-3 pt-5 pb-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="block w-full px-3 py-2 bg-gray-100 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         required
       />
-      <label
-        class="absolute text-green-300 text-sm duration-300 transform -translate-y-3 scale-75 top-2 left-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2 peer-focus:scale-75 peer-focus:-translate-y-3"
-      >
-        Confirm Password
-      </label>
       <p v-if="errors.confirmPassword" class="text-red-500 text-xs mt-1">
         {{ errors.confirmPassword }}
       </p>
@@ -75,7 +63,7 @@
 
     <!-- Submit Button -->
     <button
-      class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-green-200 hover:bg-green-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      class="w-full py-2 rounded-lg transition flex items-center justify-center text-black bg-green-100 hover:bg-green-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
       :disabled="isLoading"
     >
       <svg
